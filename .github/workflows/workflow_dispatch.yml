@@ -14,3 +14,5 @@ jobs:
           pwd
           echo 'git'
           git branch
+          git rebase master
+          ls -la
