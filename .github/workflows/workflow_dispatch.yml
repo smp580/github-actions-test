@@ -13,6 +13,7 @@ jobs:
         run: |
           echo "$GITHUB_PAYLOAD"
       - run: |
+          set -x
           git fetch
           cat .git/HEAD
           git name-rev ${{ github.sha }}
