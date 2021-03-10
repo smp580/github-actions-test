@@ -32,5 +32,6 @@ jobs:
           pwd
           echo 'git'
           git branch
+          git pull origin master:master
           git rebase master
           ls -la
