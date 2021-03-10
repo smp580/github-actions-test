@@ -17,6 +17,7 @@ jobs:
           git name-rev ${{ github.sha }}
           branch_name=`echo ${{ github.ref }} | sed 's/refs\/heads\///'`
           echo $branch_name
+          git branch --remote
           git checkout origin/$branch_name
           cat .git/HEAD
           git branch
