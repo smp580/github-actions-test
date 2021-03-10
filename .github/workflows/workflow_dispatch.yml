@@ -2,18 +2,15 @@ name: Manually development env deploy workflow
 on:
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Person to greet'
+      branch:
+        description: 'branch name you want to deploy'
         required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
+        default: 'develop'
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello ${{ github.event.inputs.name }}!"
-        echo "- in ${{ github.event.inputs.home }}!"
+        git checkout ${{ github.event.inputs.name }}
+        ls -la
