@@ -6,6 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
+        echo 'ls -la'
         ls -la
+        echo 'pwd'
         pwd
+        echo 'cd ..'
+        cd ..
+        echo 'ls -la'
+        ls -la
+        echo 'git'
         git branch
