@@ -20,6 +20,7 @@ jobs:
           branch_name=`echo ${{ github.ref }} | sed 's/refs\/heads\///'`
           echo $branch_name
           git branch --remote
+          git fetch origin $branch_name
           git checkout $branch_name
           git branch --set-upstream-to=origin/$branch_name
           cat .git/HEAD
