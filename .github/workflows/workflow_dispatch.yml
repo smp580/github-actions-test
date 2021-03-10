@@ -15,23 +15,10 @@ jobs:
       - run: |
           set -x
           git fetch
-          cat .git/HEAD
-          git name-rev ${{ github.sha }}
           branch_name=`echo ${{ github.ref }} | sed 's/refs\/heads\///'`
-          echo $branch_name
-          git branch --remote
           git fetch origin $branch_name
-          git fetch origin master
           git checkout $branch_name --
           git branch --set-upstream-to=origin/$branch_name
-          cat .git/HEAD
-          git branch
-          echo 'ls -la'
-          ls -la
-          echo 'pwd'
-          pwd
-          echo 'git'
-          git branch
           git pull origin master:master
           git rebase master
           ls -la
