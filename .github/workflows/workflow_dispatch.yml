@@ -13,6 +13,7 @@ jobs:
         run: |
           echo "$GITHUB_PAYLOAD"
       - run: |
+          cat .git/HEAD
           echo 'ls -la'
           ls -la
           echo 'pwd'
