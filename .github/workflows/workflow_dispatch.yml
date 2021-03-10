@@ -14,6 +14,9 @@ jobs:
           echo "$GITHUB_PAYLOAD"
       - run: |
           cat .git/HEAD
+          git name-rev ${{ github.sha }}
+          branch_name=`echo ${{ github.ref }} | sed 's/refs\/heads\///'`
+          git checkout $branch_name
           echo 'ls -la'
           ls -la
           echo 'pwd'
