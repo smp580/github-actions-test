@@ -5,14 +5,12 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo 'ls -la'
-        ls -la
-        echo 'pwd'
-        pwd
-        echo 'cd ..'
-        cd ..
-        echo 'ls -la'
-        ls -la
-        echo 'git'
-        git branch
+      - name: Checkout
+        uses: actions/checkout@v1
+      - run: |
+          echo 'ls -la'
+          ls -la
+          echo 'pwd'
+          pwd
+          echo 'git'
+          git branch
