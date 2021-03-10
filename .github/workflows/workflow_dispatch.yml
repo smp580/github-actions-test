@@ -29,5 +29,5 @@ jobs:
           pwd
           echo 'git'
           git branch
-          git rebase master
+          git rebase HEAD master
           ls -la
