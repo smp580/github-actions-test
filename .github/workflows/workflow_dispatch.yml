@@ -7,11 +7,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: dump github event payload
+        env:
+          GITHUB_PAYLOAD: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_PAYLOAD"
       - run: |
           echo 'ls -la'
           ls -la
           echo 'pwd'
           pwd
+          cat .git/*
           echo 'git'
           git branch
           git rebase master
