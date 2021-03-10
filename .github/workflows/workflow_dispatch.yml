@@ -1,16 +1,9 @@
 name: Manually development env deploy workflow
-on:
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: 'branch name you want to deploy'
-        required: true
-        default: 'develop'
+on: workflow_dispatch
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        git checkout ${{ github.event.inputs.name }}
         ls -la
