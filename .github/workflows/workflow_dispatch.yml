@@ -13,6 +13,7 @@ jobs:
         run: |
           echo "$GITHUB_PAYLOAD"
       - run: |
+          git fetch
           cat .git/HEAD
           git name-rev ${{ github.sha }}
           branch_name=`echo ${{ github.ref }} | sed 's/refs\/heads\///'`
