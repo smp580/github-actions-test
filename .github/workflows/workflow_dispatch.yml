@@ -7,3 +7,5 @@ jobs:
     steps:
     - run: |
         ls -la
+        pwd
+        git branch
