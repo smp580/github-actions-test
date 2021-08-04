@@ -1,0 +1,14 @@
+name: release Actions
+on: 
+  release:
+    types: 
+      - released
+   
+jobs:
+  dump-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: release
+        run: echo "release"
